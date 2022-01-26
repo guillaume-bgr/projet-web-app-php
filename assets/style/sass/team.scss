@@ -1,0 +1,155 @@
+.employee {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.main__team {
+    height: 92vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.team {
+    height: 100%;
+    width: 90vw;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    &__title {
+        margin-top: 1em;
+        font-weight: 500;
+    }
+}
+
+.employee {
+    &__name{
+        display: flex;
+        align-items: baseline;
+
+        & button {
+            height: 2em;
+            margin-left: 2em;
+        }
+
+        & h1 {
+            margin-top: 0.5em;
+            margin-bottom: 0.3em;
+            margin-left: 1em;
+        }
+    }
+
+    &__details {
+        width: 80%;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+
+        & .column {
+            font-size: 1.2em;
+            height: 60%;
+            display: flex;
+            flex-direction: column;
+
+            & * {
+                margin-top: 0.5em;
+            }
+
+            &__2 {
+                & * {
+                    &:not(.first) {
+                        margin-top: 0.8em;
+                    }
+                    text-align: right;
+                }
+            }
+        }
+
+        & .advantages {
+            width: 15vw;
+            height: 15vw;
+        
+            &__overlay {
+                position: absolute;
+                width: 15vw;
+                height: 15vw;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                z-index: 1;
+            }
+        
+            &__label {
+                font-size: 1.2em;
+                margin-top: 3em;
+            }
+
+            &__title {
+                font-size: 1.2em;
+            }
+        }
+    }
+}
+
+.project-history {
+    width: 80%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0.5em;
+    margin: auto;
+    font-size: 1.4em;
+
+    & .history__title {
+        margin-bottom: 0.5em;
+    }
+
+    & .timeline {
+        display: flex;
+        justify-content: center;
+    }
+
+    & .history__card {
+
+        overflow: hidden;
+        margin: 0 1.7em;
+        & .project {
+
+            &__finish {
+                color: $secondary-color;
+            }
+            &__name {
+                color: $primary-color;
+            }
+        }
+        text-align: center;
+
+        & .dot {
+            width: 15px;
+            height: 15px;
+            border-radius: 15px;
+            background-color: $primary-color;
+            margin: auto;
+        }
+    }
+}
+
+.line {
+    position: absolute;
+    z-index: -1;
+    height: 1px;
+    width: 100%;
+    background-color: $grey;
+    right: 0;
+    left: 0;
+    bottom: 0.3em;
+}
+
+
+
+
+

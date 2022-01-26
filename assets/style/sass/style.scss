@@ -1,0 +1,141 @@
+@import 'variables.scss';
+
+// 
+// CSS reset + common CSS
+//
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: $main-font;
+    color: $text;
+}
+
+body {
+    background: $background;
+    height: 100vh;
+}
+
+header {
+    background-color: $header;
+    height: 8vh;
+    overflow: hidden;
+    padding-left: 20px;
+    display: flex;
+    align-items: center;
+
+    a {
+        display: flex;
+        align-items: center;
+        height: 100%;
+
+        & img {
+            max-height: 300%;
+        }
+    }
+}
+
+.modal {
+    &__form {
+        width: 40vw; 
+        margin: 0 auto;
+        padding: 2em;
+        background-color: #2b2a2b85;
+        backdrop-filter: blur(2px);
+        border-radius: 15px;
+
+        & .dismiss{
+            text-align: right;
+            font-size: 1.5em;
+            & i {
+                color: $primary-color;
+                cursor: pointer;
+            }
+        }
+
+        & .delete {
+            background-color: $red;
+        }
+
+        & .worktime {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .form-element {
+            margin-top: 6vh;
+            position: relative;
+            & .label {
+                position: absolute;
+                pointer-events: none;
+                top: -2px;
+                left: 0px;
+                transition: 0.2s ease all;
+            }   
+
+            & select {
+                background: none;
+                cursor: pointer;
+                width: 100%;
+                border: none;
+                border-bottom: 1px solid $grey;
+                &:focus {
+                    border-color: $primary-color;
+                    cursor: auto;
+                }
+                &:focus ~ .label,
+                &:not(:focus):valid ~ .label{
+                    top: -15px;
+                    font-size: 10px;
+                } 
+                & option{
+                    background: $background;
+                }
+            }
+
+            & input {
+                cursor: pointer;
+                background: none;
+                width: 100%;
+                outline: none;
+                border:none;
+                border-bottom: 1px solid $grey;
+                &:focus {
+                    border-color: $primary-color;
+                    cursor: auto;
+                }
+                &:focus ~ .label, &:not(:placeholder-shown) ~ .label, &:-webkit-autofill ~ .label {
+                    top: -15px;
+                    font-size: 10px;
+                }
+            }
+            & .error {
+                color: $red;
+                & i {
+                    color: $red;
+                }
+            }
+        }
+    }
+    
+
+    &__underlay {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        width: 100vw;
+        height: 100vh;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 2;
+        background-color: rgba(0, 0, 0, 0.442)
+    }
+}
+
+@import 'login.scss';
+@import 'menu.scss';
+@import 'team.scss';
+@import 'project-list.scss';

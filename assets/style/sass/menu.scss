@@ -1,0 +1,98 @@
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 92vh;
+    width: 80%;
+    margin: auto;
+
+    &__title {
+        font-size: 3.5em;
+        
+        & h1 {
+            display: inline-block;
+            transform: scale(1, 1.5);
+            -webkit-transform: scale(1, 1.5);
+            -moz-transform: scale(1, 1.5);
+            -o-transform: scale(1, 1.5);
+            transform-origin: 0% 70%;
+        }
+    }
+
+    &__buttons {
+        display: flex;
+        justify-content: center;
+    }
+
+    &__column {
+        .square {
+            margin: 0px 5px 5px 0px;
+            height: 20vh;
+            width: 20vh;
+            border-radius: 5px;
+
+            &:not(.transparent):not(.menu__button) {
+                filter: brightness(70%);
+            }
+
+            &.menu__button {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                transition: background-color ease 0.3s, color ease 0.3s;
+
+                &:hover {
+                    background-color: $text !important;
+
+                    & a {
+                        color: $primary-color;
+                    }
+                }
+
+                & a {
+                    text-decoration: none;
+                    font-weight: 600;
+                    font-size: 2em;
+                }
+            }
+        }
+
+        &.column-1 .square {
+            background-color: #00A359;
+            &.transparent {
+                background-color: transparent;
+            }
+        }
+
+        &.column-2 .square {
+            background-color: #00B764;
+            &.transparent {
+                background-color: transparent;
+            }
+            &.menu__button {
+                &:hover {
+                    background-color: lighten($color: #00B764, $amount: 8)
+                }
+            }
+        }
+
+        &.column-3 .square {
+            background-color: #00E17B;
+            &.transparent {
+                background-color: transparent;
+            }
+            &.menu__button {
+                &:hover {
+                    background-color: lighten($color: #00E17B, $amount: 8)
+                }
+            }
+        }
+
+        &.column-4 .square {
+            background-color: #00FF8B;
+            &.transparent {
+                background-color: transparent;
+            }
+        }
+    }
+}

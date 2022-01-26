@@ -1,0 +1,165 @@
+a.button, button.button {
+    cursor: pointer;
+    pointer-events: auto; 
+    text-decoration: none;
+    background: $primary-color;
+    border: none;
+    font-size: 1em;
+    padding: 0.2em 1em;
+    border-radius: 4px;
+    transition: color 0.5s, background-color 0.5s;
+
+    &:hover {
+        opacity: 0.85;
+    }
+}
+
+.buttons {
+    margin-top: 4vh;
+    width: 100%;
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+
+    .register {
+        background-color: $secondary-color;
+    }
+}
+
+//
+// Login Page 
+// 
+
+.login {
+    height: 92vh;
+    width: 80%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+
+    &__display {
+        display: flex;
+        width: 45%;
+        flex-direction: column;
+        align-items: center;
+
+        img {
+            max-width: 100%;
+        }
+
+        .slogan {   
+            width: 80%;
+            text-align: center;
+            font-weight: 500;
+        }
+    }
+
+    &__title {
+        width: 100%;
+        text-align: center;
+        font-weight: 500;
+    }
+
+    &__form {
+        width: 30%; 
+        margin: 0 auto;
+
+        .form-element {
+            margin-top: 6vh;
+            position: relative;
+            & .label {
+                position: absolute;
+                pointer-events: none;
+                top: -2px;
+                left: 0px;
+                transition: 0.2s ease all;
+            }   
+
+            & select {
+                background: none;
+                cursor: pointer;
+                width: 100%;
+                border: none;
+                border-bottom: 1px solid $grey;
+                &:focus {
+                    border-color: $primary-color;
+                    cursor: auto;
+                }
+                &:focus ~ .label,
+                &:not(:focus):valid ~ .label{
+                    top: -15px;
+                    font-size: 10px;
+                } 
+                & option{
+                    background: $background;
+                }
+            }
+
+            & input {
+                cursor: pointer;
+                background: none;
+                width: 100%;
+                outline: none;
+                border:none;
+                border-bottom: 1px solid $grey;
+                &:focus {
+                    border-color: $primary-color;
+                    cursor: auto;
+                }
+                &:focus ~ .label, &:not(:placeholder-shown) ~ .label, &:-webkit-autofill ~ .label {
+                    top: -15px;
+                    font-size: 10px;
+                }
+            }
+            & .error {
+                color: $red;
+                & i {
+                    color: $red;
+                }
+            }
+        }
+
+        .forgot {
+            text-decoration: none;
+            display: block;
+            margin-top: 2em;
+            text-align: right;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+// register page
+
+.register-form {
+    width: 60%;
+}
+
+.register-title {
+    margin-top: 1em;
+}
+
+.flex-form {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 8%;
+
+    .form-element:not(.last) {
+        margin-bottom: 2em;
+    }
+}
+
+.column {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+}
+
+//forgot page
+
+.pwd-reset {
+    margin: auto;
+}
